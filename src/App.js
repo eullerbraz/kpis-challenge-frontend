@@ -1,7 +1,9 @@
-function App() {
+import RoutesPage from "./pages/RoutesPage";
+
+const App = () => {
   return (
     <div className="App">
-      clean
+      <RoutesPage />
     </div>
   );
 }
