@@ -16,7 +16,7 @@ const Welcome = () => {
       <img
         src={logo}
         alt="Company logo"
-        className="company-logo"
+        className="welcome-logo"
       />
 
       <div
