@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import QuestionComponent from '../../components/QuestionComponent';
 import logo from '../../images/logo.svg';
 import questions from '../../data/questions';
+import Footer from '../../components/Footer';
 
 const Question = () => {
   const navigate = useNavigate();
@@ -26,49 +27,51 @@ const Question = () => {
   }
 
   return (
-    <main>
-      <img
-        src={logo}
-        alt="Company logo"
-        className="question-logo"
-      />
-      <QuestionComponent
-        question={question}
-      />
-      <div className="buttons-container">
-        <button
-          onClick={ handleBack }
-          className="button back-button"
-        >
-          Voltar
-        </button>
-        <button
-          onClick={ handleNext }
-          className="button next-button"
-        >
-          Avançar
-        </button>
-      </div>
-      <div className="completed-questions-container">
-        <span
-          className="completed-questions-text"
-        >
-          Perguntas Concluidas
-        </span>
-        <div>
-          {
-            questions.map((_, index) => {
-              const className = index + 1 <= question.id ?
-              "question-check completed" : "question-check";
-
-              return (
-                <span className={ className }></span>
-              );
-            })
-          }
+    <>
+      <main>
+        <img
+          src={logo}
+          alt="Company logo"
+          className="question-logo"
+        />
+        <QuestionComponent
+          question={question}
+        />
+        <div className="buttons-container">
+          <button
+            onClick={ handleBack }
+            className="button back-button"
+          >
+            Voltar
+          </button>
+          <button
+            onClick={ handleNext }
+            className="button next-button"
+          >
+            Avançar
+          </button>
         </div>
-      </div>
-    </main>
+        <div className="completed-questions-container">
+          <span
+            className="completed-questions-text"
+          >
+            Perguntas Concluidas
+          </span>
+          <div>
+            {
+              questions.map((_, index) => {
+                const className = index + 1 <= question.id ?
+                "question-check completed" : "question-check";
+                return (
+                  <span className={ className }></span>
+                );
+              })
+            }
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
 
