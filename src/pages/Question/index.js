@@ -35,9 +35,7 @@ const Question = () => {
       <QuestionComponent
         question={question}
       />
-      <div
-        className="buttons-container"
-      >
+      <div className="buttons-container">
         <button
           onClick={ handleBack }
           className="button back-button"
@@ -50,6 +48,25 @@ const Question = () => {
         >
           Avançar
         </button>
+      </div>
+      <div className="completed-questions-container">
+        <span
+          className="completed-questions-text"
+        >
+          Perguntas Concluidas
+        </span>
+        <div>
+          {
+            questions.map((_, index) => {
+              const className = index + 1 <= question.id ?
+              "question-check completed" : "question-check";
+
+              return (
+                <span className={ className }></span>
+              );
+            })
+          }
+        </div>
       </div>
     </main>
   );
