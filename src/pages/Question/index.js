@@ -40,13 +40,13 @@ const Question = () => {
       >
         <button
           onClick={ handleBack }
-          className="button start-button"
+          className="button back-button"
         >
           Voltar
         </button>
         <button
           onClick={ handleNext }
-          className="button start-button"
+          className="button next-button"
         >
           Avançar
         </button>
