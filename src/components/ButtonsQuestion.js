@@ -46,6 +46,7 @@ const ButtonsQuestion = ({ question }) => {
           <textarea
             placeholder="Caso queira, adicione os motivos da sua avaliação"
             onChange={ handleChange }
+            value={ answer.description }
           />
         </section>
       </>
