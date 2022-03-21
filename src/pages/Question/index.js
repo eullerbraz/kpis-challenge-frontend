@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 import QuestionComponent from '../../components/QuestionComponent';
@@ -15,6 +15,11 @@ const Question = () => {
   const { id } = useParams();
   const question = questions.find((question) => question.id === Number(id));
   const { answer } = useContext(answerContext);
+  const [isAnswered, setIsAnswered] = useState(false);
+
+  useEffect(() => {
+    setIsAnswered(answer.satisfaction && answer.peopleQuantity);
+  }, [answer])
 
   const sendAnswer = async () => {
     await axios.post(
@@ -37,11 +42,14 @@ const Question = () => {
   }
 
   const handleNext = () => {
-    if (question.id === questions.length) {
+    const isLastQuestion = question.id === questions.length;
+    if(!isLastQuestion) {
+      navigate(`/question/${question.id + 1}`);
+    } else if (isAnswered) {
       sendAnswer();
       navigate("/thanks");
     } else {
-      navigate(`/question/${question.id + 1}`);
+      alert("Por favor responda todas as questões!!!")
     }
   }
 
@@ -82,7 +90,7 @@ const Question = () => {
                 const className = index + 1 <= question.id ?
                 "question-check completed" : "question-check";
                 return (
-                  <span className={ className }></span>
+                  <span key={ index } className={ className }></span>
                 );
               })
             }
