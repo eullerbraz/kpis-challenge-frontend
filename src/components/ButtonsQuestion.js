@@ -6,7 +6,7 @@ const ButtonsQuestion = ({ question }) => {
   const { answer, setAnswer } = useContext(answerContext);
   const { options, field } = question;
 
-  const handleClick = ({ target: { innerText, classList } }) => {
+  const handleClick = ({ target: { innerText } }) => {
     setAnswer({
       ...answer,
       [field]: Number(innerText),
