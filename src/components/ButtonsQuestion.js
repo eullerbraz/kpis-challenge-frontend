@@ -7,10 +7,16 @@ const ButtonsQuestion = ({ question }) => {
   const { options, field } = question;
 
   const handleClick = ({ target: { innerText, classList } }) => {
-    classList.add("selected-option");
     setAnswer({
       ...answer,
       [field]: Number(innerText),
+    });
+  }
+
+  const handleChange = ({ target: { value } }) => {
+    setAnswer({
+      ...answer,
+      description: value,
     });
   }
 
@@ -39,6 +45,7 @@ const ButtonsQuestion = ({ question }) => {
           <h2 className="comment-title">Comentário</h2>
           <textarea
             placeholder="Caso queira, adicione os motivos da sua avaliação"
+            onChange={ handleChange }
           />
         </section>
       </>
