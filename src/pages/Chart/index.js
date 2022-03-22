@@ -76,6 +76,7 @@ const Chart = () => {
           axisLeft={{
             tickSize: 5,
             tickPadding: 5,
+            // https://github.com/plouc/nivo/issues/144
             format: e => Math.floor(e) === e && e,
             legend: 'Respostas',
             legendPosition: 'start',
