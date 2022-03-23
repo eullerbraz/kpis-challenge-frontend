@@ -49,8 +49,6 @@ const Question = () => {
     } else if (isAnswered) {
       sendAnswer();
       navigate("/thanks");
-    } else {
-      alert("Por favor responda todas as questões!!!")
     }
   }
 
@@ -74,6 +72,7 @@ const Question = () => {
               Voltar
             </button>
             <button
+              disabled={ !answer[question.field] }
               onClick={ handleNext }
               className="button next-button"
             >
@@ -85,7 +84,7 @@ const Question = () => {
             <span
               className="completed-questions-text"
             >
-              Perguntas Concluidas
+              Perguntas Concluídas
             </span>
             <div>
               {

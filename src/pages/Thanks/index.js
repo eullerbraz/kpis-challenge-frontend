@@ -28,7 +28,7 @@ const Thanks = () => {
               Muito obrigado por preencher o nosso formulário!
             </span>
             <span>
-              Sua opinião é muito importante para o constante crescimento da emmpresa
+              Sua opinião é muito importante para o constante crescimento da empresa
             </span>
             <span>
               Gostaria de verificar nosso gráfico sobre esse formulário?
