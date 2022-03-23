@@ -1,4 +1,5 @@
 import RoutesPage from "./pages/RoutesPage";
+import './App.css';
 
 const App = () => {
   return (
