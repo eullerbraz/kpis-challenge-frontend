@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 
-import Footer from '../../components/Footer';
 import logo from '../../images/logo.svg';
 import './index.css';
 
@@ -43,7 +42,6 @@ const Welcome = () => {
           </button>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

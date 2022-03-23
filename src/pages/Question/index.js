@@ -7,6 +7,7 @@ import logo from '../../images/logo.svg';
 import questions from '../../data/questions';
 import Footer from '../../components/Footer';
 import answerContext from '../../context/answerContext';
+import './index.css';
 
 const ENDPOINT = 'https://kpis-backend-eullerbraz.herokuapp.com/answers';
 
@@ -55,47 +56,49 @@ const Question = () => {
 
   return (
     <>
-      <main>
-        <img
-          src={logo}
-          alt="Company logo"
-          className="question-logo"
-        />
-        <QuestionComponent
-          question={question}
-        />
-        <div className="buttons-container">
-          <button
-            onClick={ handleBack }
-            className="button back-button"
-          >
-            Voltar
-          </button>
-          <button
-            onClick={ handleNext }
-            className="button next-button"
-          >
-            Avançar
-          </button>
-        </div>
-        <div className="completed-questions-container">
-          <span
-            className="completed-questions-text"
-          >
-            Perguntas Concluidas
-          </span>
-          <div>
-            {
-              questions.map((_, index) => {
-                const className = index + 1 <= question.id ?
-                "question-check completed" : "question-check";
-                return (
-                  <span key={ index } className={ className }></span>
-                );
-              })
-            }
+      <main className='question-main'>
+        <div className='question-main-content'>
+          <img
+            src={logo}
+            alt="Company logo"
+            className="question-logo"
+          />
+          <QuestionComponent
+            question={question}
+          />
+          <div className="buttons-container">
+            <button
+              onClick={ handleBack }
+              className="button back-button"
+            >
+              Voltar
+            </button>
+            <button
+              onClick={ handleNext }
+              className="button next-button"
+            >
+              Avançar
+            </button>
           </div>
         </div>
+        <div className="completed-questions-container">
+            <span
+              className="completed-questions-text"
+            >
+              Perguntas Concluidas
+            </span>
+            <div>
+              {
+                questions.map((_, index) => {
+                  const className = index + 1 <= question.id ?
+                  "question-check completed" : "question-check";
+                  return (
+                    <span key={ index } className={ className }></span>
+                  );
+                })
+              }
+            </div>
+          </div>
       </main>
       <Footer />
     </>

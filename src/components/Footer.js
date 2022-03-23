@@ -1,7 +1,13 @@
-const Footer = ({ question }) => {
+import './Footer.css';
+
+const Footer = () => {
   return (
     <footer className="footer">
-      <span className="footer-text">Desenvolvido por Key People Insights</span>
+      <div className='footer-content'>
+        <span className="footer-text">
+          Desenvolvido por Key People Insights
+        </span>
+      </div>
     </footer>
   );
 }

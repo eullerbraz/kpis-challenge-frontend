@@ -1,5 +1,6 @@
 import ButtonsQuestion from "./ButtonsQuestion";
 import RadioQuestion from "./RadioQuestion";
+import './QuestionComponent.css';
 
 const QuestionComponent = ({ question }) => {
   return (

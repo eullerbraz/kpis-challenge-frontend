@@ -1,6 +1,7 @@
 import { useContext } from "react";
 
 import answerContext from '../context/answerContext';
+import './RadioQuestion.css';
 
 const RadioQuestion = ({ question }) => {
   const { answer, setAnswer } = useContext(answerContext);
@@ -14,7 +15,7 @@ const RadioQuestion = ({ question }) => {
   }
 
   return (
-    <div className="radio-container">
+    <section className="radio-container">
       {
         options.map((option, index) => (
           <div
@@ -28,6 +29,7 @@ const RadioQuestion = ({ question }) => {
               value={ option }
               onChange={ handleChange }
               checked={ option === answer[field] }
+              className='input-radio'
             />
             <label
               htmlFor={option}
@@ -37,7 +39,7 @@ const RadioQuestion = ({ question }) => {
             </div>
         ))
       }
-    </div>
+    </section>
   );
 }
 
