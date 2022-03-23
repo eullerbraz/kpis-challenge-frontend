@@ -27,3 +27,8 @@ main {
   padding: 0.75rem 0;
   width: 200px;
 }
+
+.button:disabled {
+  background-color: gray;
+  
+}
