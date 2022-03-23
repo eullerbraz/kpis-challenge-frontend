@@ -1,0 +1,38 @@
+.welcome-main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome-main-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7rem;
+  width: 50vw;
+}
+
+.welcome-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.welcome-text-container > span:first-of-type {
+  color: #EDF1F2;
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.welcome-text-container > span:nth-of-type(2) {
+  color: #EDF1F2;
+  font-size: 1.75rem;
+}
+
+.welcome-text-container > span:last-of-type {
+  color: #B2C3C7;
+  font-size: 1.5rem;
+}

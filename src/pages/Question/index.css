@@ -1,0 +1,50 @@
+.question-main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  justify-content: center;
+}
+
+.question-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 720px;
+  width: 50vw;
+}
+
+.question-logo {
+  width: 170px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.completed-questions-container {
+  align-items: flex-end;
+  color: #B2C3C7;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 50vw;
+}
+
+.completed-questions-container > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.question-check {
+  background-color: hsla(192, 16%, 94%, 0.5);
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+}
+
+.completed {
+  background-color: hsla(192, 16%, 94%);
+}
